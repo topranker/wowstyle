@@ -1,0 +1,22 @@
+
+<input type="text" name="ddlNames" id="ddlNames">
+<br />
+<br />
+<input type="button" value="update" onclick="SetName();" />
+<script type="text/javascript">
+    function SetName() {
+        if (window.opener != null && !window.opener.closed) {
+            var txtName = window.opener.document.getElementById("txtName");
+            txtName.value = document.getElementById("ddlNames").value;
+	if(txtName.value==""){
+setTimeout(function() { alert('Empty category is not allowed!'); }, 1);
+} else {
+		window.opener.document.forms['post_site_name'].submit();
+window.close();
+}
+        }
+        
+	
+    }
+</script>
+
